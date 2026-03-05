@@ -1,0 +1,230 @@
+.fc-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 8px 0 40px;
+}
+
+.fc-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.82rem;
+  color: var(--text2);
+}
+
+.fc-progress-track {
+  flex: 1;
+  height: 6px;
+  background: var(--bg2);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.fc-progress-fill {
+  height: 100%;
+  background: var(--purple);
+  border-radius: 3px;
+  transition: width 0.4s ease;
+}
+
+/* Card flip */
+.fc-card {
+  width: 100%;
+  max-width: 560px;
+  height: 260px;
+  cursor: pointer;
+  perspective: 1000px;
+}
+
+.fc-card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.45s ease;
+}
+
+.fc-card.flipped .fc-card-inner {
+  transform: rotateY(180deg);
+}
+
+.fc-card-front,
+.fc-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  text-align: center;
+}
+
+.fc-card-front {
+  background: var(--card);
+}
+
+.fc-card-back {
+  background: linear-gradient(135deg, rgba(124, 111, 247, 0.12), rgba(34, 211, 238, 0.06));
+  border-color: rgba(124, 111, 247, 0.3);
+  transform: rotateY(180deg);
+}
+
+.fc-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text2);
+  padding: 3px 10px;
+  background: var(--bg2);
+  border-radius: 20px;
+}
+
+.fc-label.verso {
+  background: rgba(124, 111, 247, 0.15);
+  color: var(--purple2);
+}
+
+.fc-text {
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.6;
+  max-width: 440px;
+}
+
+.fc-hint {
+  font-size: 0.75rem;
+  color: var(--text2);
+  opacity: 0.6;
+}
+
+/* Avaliação */
+.fc-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  max-width: 560px;
+}
+
+.fc-avaliar-label {
+  font-size: 0.85rem;
+  color: var(--text2);
+}
+
+.fc-btns {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.fc-btn {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 14px 10px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--card);
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  transition: all 0.2s;
+}
+
+.fc-btn small {
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: var(--text2);
+}
+
+.fc-btn:hover { transform: translateY(-2px); }
+
+.fc-btn.dificil:hover { border-color: #f87171; background: rgba(248,113,113,0.08); }
+.fc-btn.bom:hover     { border-color: #fbbf24; background: rgba(251,191,36,0.08); }
+.fc-btn.facil:hover   { border-color: #4ade80; background: rgba(74,222,128,0.08); }
+
+.fc-flip-hint {
+  font-size: 0.82rem;
+  color: var(--text2);
+  opacity: 0.6;
+}
+
+/* Conclusão */
+.fc-done {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  padding: 40px 24px;
+  text-align: center;
+}
+
+.fc-done-icon { font-size: 3rem; }
+.fc-done h2 { font-size: 1.4rem; font-weight: 800; }
+.fc-done p  { color: var(--text2); }
+
+.fc-stats {
+  display: flex;
+  gap: 24px;
+  margin: 8px 0;
+}
+
+.fc-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.82rem;
+  color: var(--text2);
+  min-width: 52px;
+}
+
+.fc-stat-num {
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.fc-stat.facil .fc-stat-num   { color: #4ade80; }
+.fc-stat.bom .fc-stat-num     { color: #fbbf24; }
+.fc-stat.dificil .fc-stat-num { color: #f87171; }
+
+.fc-tip {
+  font-size: 0.85rem;
+  color: var(--text2);
+  max-width: 340px;
+}
+
+.fc-btn-reiniciar {
+  background: var(--purple);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  padding: 12px 28px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.fc-btn-reiniciar:hover { opacity: 0.88; }
+
+.fc-empty {
+  text-align: center;
+  padding: 40px;
+  color: var(--text2);
+}
